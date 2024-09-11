@@ -1,5 +1,6 @@
 package org.example;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Builder
+@Audited
 
 public class Cliente implements Serializable {
 

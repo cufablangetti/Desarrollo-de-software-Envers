@@ -16,7 +16,7 @@ public class Main {
             entityManager.getTransaction().begin();
 
             // Crear nuevas categorías
-            Categoria categoriaTecnologia = Categoria.builder().denominacion("Tecnología").build();
+           /* Categoria categoriaTecnologia = Categoria.builder().denominacion("Tecnología").build();
             Categoria categoriaHogar = Categoria.builder().denominacion("Hogar").build();
             Categoria categoriaJuguetes = Categoria.builder().denominacion("Juguetes").build();
             Categoria categoriaBelleza = Categoria.builder().denominacion("Belleza").build();
@@ -67,10 +67,19 @@ public class Main {
             Cliente cliente1 = Cliente.builder().nombre("Carlos").apellido("Gutiérrez").dni(40123456).domicilio(domicilio1).build();
 
             // Asociar cliente con factura
-            factura1.setCliente(cliente1);
+            factura1.setCliente(cliente1);*/
+
+            // Para actualizar una factura
+            Factura factura1 = entityManager.find(Factura.class, 1L);
+            //factura1.setNumero(52);
 
             // Persistir la factura (esto también persistirá el cliente y los detalles debido a las relaciones)
-            entityManager.persist(factura1);
+            //entityManager.persist(factura1);
+            //entityManager.merge(factura1);
+
+
+            //Para eliminar una factura
+            entityManager.remove(factura1);
 
             // Limpiar la conexión
             entityManager.flush();
